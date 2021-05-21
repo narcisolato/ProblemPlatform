@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const template = {
-    html : function(table){
+    html : function(board_table = "", board_contents = ""){
         const html_tamplate = `
         <!doctype html>
         <html>
@@ -10,7 +10,8 @@ const template = {
             <meta charset="utf-8">
         </head>
         <body>
-            ${table}
+            <div>${board_table}</div>
+            <div>${board_contents}</div>
         </body>  
         </html>`;
         return html_tamplate; 
@@ -42,6 +43,10 @@ const template = {
                 </tbody>
             </table>`;    
         return table_format;
+    },
+
+    contents : function() {
+
     }
 }
 
